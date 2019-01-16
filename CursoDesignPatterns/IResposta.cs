@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class ICMS : IImposto
+    public interface IResposta
     {
-        public double Calcula(Orcamento orcamento)
-        {
-            return orcamento.Valor * 0.5 + 50;
-        }
+        void Responde(Requisicao requisicao, Conta conta);
+        IResposta OutraResposta { get; set; }
     }
 }
