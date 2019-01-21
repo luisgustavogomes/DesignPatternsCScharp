@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class DescontoPorCincoItens : IDesconto
+    public class DescontoPorCincoItens : TemplateDeDesconto
     {
-        public IDesconto Proximo { get; set ; }
 
-        public double Descontar(Orcamento orcamento)
+        public DescontoPorCincoItens(IDesconto desconto)
         {
-            return orcamento.Itens.Count > 5 ? orcamento.Valor * 0.01 : Proximo.Descontar(orcamento);
+            Proximo = desconto ?? throw new ArgumentNullException(nameof(desconto));
         }
+        
+        public override double Desconto(Orcamento orcamento)
+        {
+            return orcamento.Valor * 0.01;
+        }
+
+        public override bool DeveAplicarDesconto(Orcamento orcamento)
+        {
+            return orcamento.Itens.Count > 5;
+        }
+
+        //public IDesconto Proximo { get; set ; }
+
+        //public double Descontar(Orcamento orcamento)
+        //{
+        //    return orcamento.Itens.Count > 5 ? orcamento.Valor * 0.01 : Proximo.Descontar(orcamento);
+        //}
     }
 }

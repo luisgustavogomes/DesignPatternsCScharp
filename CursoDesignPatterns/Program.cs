@@ -8,15 +8,27 @@ namespace CursoDesignPatterns
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
+        {
+            var calculador = new CalculadorDeDesconto();
+            var orcamento = new Orcamento(750);
+
+            orcamento.AdicionarItem(new Item("Caneta", 750));
+            //orcamento.AdicionarItem(new Item("Lapis", 250));
+
+            var desconto = calculador.Calcula(orcamento);
+            Console.WriteLine($"Desconto calculado: {desconto}");
+
+
+            Console.ReadLine();
+        }
+
+        private static void TemplateMethod1()
         {
             var ikcv = new IKCV();
             var orcamento = new Orcamento(500.00);
 
             CalculadorDeImpostos.RealizaCalculo(orcamento, ikcv);
-
-
-            Console.ReadLine();
         }
 
         private static void ChainOfResponsibility2()
@@ -40,7 +52,7 @@ namespace CursoDesignPatterns
             Console.WriteLine($"Desconto calculado: {desconto}");
         }
 
-        private static void TrabalhandoComStrategy2()
+        private static void Strategy2()
         {
             var conta1 = new Conta();
             var conta2 = new Conta();
@@ -59,7 +71,7 @@ namespace CursoDesignPatterns
             realizadorDeInvestimento.Realiza(conta3, arrojado);
         }
 
-        private static void TrabalhandoComStrategy1()
+        private static void Strategy1()
         {
             IImposto iss = new ISS();
             IImposto icms = new ICMS();

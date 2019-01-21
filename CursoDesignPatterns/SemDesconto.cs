@@ -6,13 +6,34 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class SemDesconto : IDesconto
+    public class SemDesconto : TemplateDeDesconto
     {
-        public IDesconto Proximo { get ; set ; }
 
-        public double Descontar(Orcamento orcamento)
+        public SemDesconto()
+        {
+
+        }
+
+        public SemDesconto(IDesconto desconto)
+        {
+            Proximo = desconto ?? throw new ArgumentNullException(nameof(desconto));
+        }
+
+        public override double Desconto(Orcamento orcamento)
         {
             return 0;
         }
+
+        public override bool DeveAplicarDesconto(Orcamento orcamento)
+        {
+            return true;
+        }
+        
+        //public IDesconto Proximo { get ; set ; }
+        //
+        //public double Descontar(Orcamento orcamento)
+        //{
+        //    return 0;
+        //}
     }
 }
