@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public class ICCC : IImposto
+    public class ICCC : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public ICCC(Imposto outroImposto) : base(outroImposto) { }
+        public ICCC() : base() { }
+
+
+        public override double Calcula(Orcamento orcamento)
         {
             if (orcamento.Valor < 1000)
             {
-                return 0.05 * orcamento.Valor;
+                return 0.05 * orcamento.Valor + CalculoDoOutroImposto(orcamento);
             }
             else if (orcamento.Valor >= 1000 && orcamento.Valor <= 3000)
             {
-                return 0.07 * orcamento.Valor;
+                return 0.07 * orcamento.Valor + CalculoDoOutroImposto(orcamento);
             }
             else
             {
-                return 0.08 * orcamento.Valor + 30.0;
+                return 0.08 * orcamento.Valor + 30.0 + CalculoDoOutroImposto(orcamento);
             }
         }
     }

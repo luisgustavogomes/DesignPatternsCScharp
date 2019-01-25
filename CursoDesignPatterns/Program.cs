@@ -10,6 +10,72 @@ namespace CursoDesignPatterns
     {
         public static void Main(string[] args)
         {
+
+            Console.ReadLine();
+        }
+
+        private static void State2()
+        {
+            try
+            {
+                var conta = new Conta();
+                Console.WriteLine(conta);
+
+                conta.Sacar(100);
+
+                Console.WriteLine(conta);
+
+                conta.Sacar(100);
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private static void State1()
+        {
+            try
+            {
+                var reforma = new Orcamento(500);
+
+
+                Console.WriteLine("Status: " + reforma.Status + " | Saldo: " + reforma.Valor);
+                reforma.AplicaDescontoExtra();
+                Console.WriteLine("Status: " + reforma.Status + " | Saldo: " + reforma.Valor);
+
+
+                reforma.Aprova();
+                Console.WriteLine("\nStatus: " + reforma.Status + " | Saldo: " + reforma.Valor);
+                reforma.AplicaDescontoExtra();
+                Console.WriteLine("Status: " + reforma.Status + " | Saldo: " + reforma.Valor);
+
+                reforma.Finaliza();
+                Console.WriteLine("\nStatus: " + reforma.Status + " | Saldo: " + reforma.Valor);
+
+                reforma.AplicaDescontoExtra();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private static void Decorator1()
+        {
+            var iss = new ISS(new ICMS());
+            var orcamento = new Orcamento(500);
+
+            var valorImposto = iss.Calcula(orcamento);
+
+            Console.WriteLine(valorImposto);
+        }
+
+        private static void ChainOfResponsaibilityComTemplateMethod()
+        {
             var calculador = new CalculadorDeDesconto();
             var orcamento = new Orcamento(750);
 
@@ -18,9 +84,6 @@ namespace CursoDesignPatterns
 
             var desconto = calculador.Calcula(orcamento);
             Console.WriteLine($"Desconto calculado: {desconto}");
-
-
-            Console.ReadLine();
         }
 
         private static void TemplateMethod1()
@@ -73,8 +136,8 @@ namespace CursoDesignPatterns
 
         private static void Strategy1()
         {
-            IImposto iss = new ISS();
-            IImposto icms = new ICMS();
+            Imposto iss = new ISS();
+            Imposto icms = new ICMS();
 
             Orcamento orcamento = new Orcamento(120000.00);
 

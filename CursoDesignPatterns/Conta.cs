@@ -8,11 +8,15 @@ namespace CursoDesignPatterns
 {
     public class Conta
     {
-        public double Saldo { get; private set; }
+        public IStatusConta StatusConta { get; set; }
+        public double Saldo { get; set; }
         public string Nome { get; private set; }
+        public DateTime DataAbertura { get; private set; }
 
         public Conta()
         {
+            StatusConta = new StatusContaPositivo();
+            Saldo = 10;
         }
 
         public Conta(double saldo, string nome)
@@ -23,19 +27,17 @@ namespace CursoDesignPatterns
 
         public void Depositar(double valor)
         {
-            if (valor < 0)
-            {
-                throw new ArgumentException("Campo: " + nameof(valor) + " não pode ser menor ou igual a zero!");
-            }
-#pragma warning disable CS0472 // O resultado da expressão é sempre o mesmo, pois um valor deste tipo nunca é 'null' 
-            if (valor == null)
-#pragma warning restore CS0472 // O resultado da expressão é sempre o mesmo, pois um valor deste tipo nunca é 'null' 
-            {
-                throw new ArgumentNullException("Campo " + nameof(valor) + " não pode ser nulo!");
-            }
-
-            Saldo += valor;
+            StatusConta.Depositar(this, valor);
         }
 
+        public void Sacar(double valor)
+        {
+            StatusConta.Sacar(this, valor);
+        }
+
+        public override string ToString()
+        {
+            return $"Saldo: {Saldo} | Status: {StatusConta}";
+        }
     }
 }

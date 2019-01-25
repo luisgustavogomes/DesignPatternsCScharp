@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns
 {
-    public interface IImposto
+    public interface IStatusConta
     {
-        double Calcula(Orcamento orcamento);
+        void Sacar(Conta conta, double valor);
+        void Depositar(Conta conta, double valor);
     }
 }
