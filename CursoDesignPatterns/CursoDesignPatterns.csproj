@@ -51,6 +51,8 @@
     <Compile Include="CalculadorDeDesconto.cs" />
     <Compile Include="Conservador.cs" />
     <Compile Include="Conta.cs" />
+    <Compile Include="ItemDaNotaBuilder.cs" />
+    <Compile Include="NotaFiscalBuilder.cs" />
     <Compile Include="DescontoPorCincoItens.cs" />
     <Compile Include="DescontoPorMaisDeQuinhentosReais.cs" />
     <Compile Include="DescontoPorVendaCasada.cs" />
@@ -70,7 +72,9 @@
     <Compile Include="IStatusConta.cs" />
     <Compile Include="IStatusOrcamento.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemDaNota.cs" />
     <Compile Include="Moderado.cs" />
+    <Compile Include="NotaFiscal.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="PontoEVirgula.cs" />
     <Compile Include="Porcento.cs" />

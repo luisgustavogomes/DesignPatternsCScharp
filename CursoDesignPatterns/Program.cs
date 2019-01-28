@@ -14,6 +14,23 @@ namespace CursoDesignPatterns
             Console.ReadLine();
         }
 
+        private static void Builder1()
+        {
+            var criadorDeNotaFiscal = new NotaFiscalBuilder();
+            var itens = new ItemDaNotaBuilder();
+            criadorDeNotaFiscal
+                .ParaEmpresa("LG")
+                .ComCnpj("999.999.99-99")
+                .ComItem(itens.ComNome("Sapato").ComValor(100).Controi())
+                .ComItem(itens.ComNome("Calça").ComValor(500).Controi())
+                .NaDataAtual()
+                .ComObservacoes("Teste obs ");
+
+            var nf = criadorDeNotaFiscal.Constroi();
+
+            Console.WriteLine(nf);
+        }
+
         private static void State2()
         {
             try
@@ -97,7 +114,7 @@ namespace CursoDesignPatterns
         private static void ChainOfResponsibility2()
         {
             var req = new Requisicao(Formato.PORCENTO);
-            var conta = new Conta(nome:"luis", saldo: 100.00);
+            var conta = new Conta(nome: "luis", saldo: 100.00);
 
             var chamada = new RealizaChamadaRequisicao();
             chamada.Chamada(req, conta);
