@@ -10,7 +10,7 @@ namespace CursoDesignPatterns
     {
         public static void Main(string[] args)
         {
-
+            Builder1();
             Console.ReadLine();
         }
 
@@ -23,7 +23,7 @@ namespace CursoDesignPatterns
                 .ComCnpj("999.999.99-99")
                 .ComItem(itens.ComNome("Sapato").ComValor(100).Controi())
                 .ComItem(itens.ComNome("Calça").ComValor(500).Controi())
-                .NaDataAtual()
+                .NaData(new DateTime(2017, 1, 18))
                 .ComObservacoes("Teste obs ");
 
             var nf = criadorDeNotaFiscal.Constroi();

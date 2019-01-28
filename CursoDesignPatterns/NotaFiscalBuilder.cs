@@ -16,6 +16,11 @@ namespace CursoDesignPatterns
         private double impostos;
         private IList<ItemDaNota> todosItens = new List<ItemDaNota>();
 
+        public NotaFiscalBuilder()
+        {
+            Data = DateTime.Now;
+        }
+
         public NotaFiscal Constroi()
         {
             return new NotaFiscal(RazaoSocial, Cnpj, Data, valotTotal, impostos, todosItens, Observacoes);
@@ -49,11 +54,11 @@ namespace CursoDesignPatterns
             return this;
         }
 
-        public NotaFiscalBuilder NaDataAtual()
+        public NotaFiscalBuilder NaData(DateTime dateTime)
         {
-            Data = DateTime.Now;
+            Data = dateTime;
             return this;
         }
- 
+
     }
 }

@@ -10,7 +10,7 @@ namespace CursoDesignPatterns
     {
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
-        public DateTime DataDeEmissoa { get; set; }
+        public DateTime DataEmissao { get; set; }
         public double ValorBruto { get; set; }
         public double Impostos { get; set; }
         public IList<ItemDaNota> Itens { get; set; }
@@ -20,7 +20,7 @@ namespace CursoDesignPatterns
         {
             RazaoSocial = razaoSocial ?? throw new ArgumentNullException(nameof(razaoSocial));
             Cnpj = cnpj ?? throw new ArgumentNullException(nameof(cnpj));
-            DataDeEmissoa = dataDeEmissoa;
+            DataEmissao = dataDeEmissoa;
             ValorBruto = valorBruto;
             Impostos = impostos;
             Itens = itens ?? throw new ArgumentNullException(nameof(itens));
@@ -30,7 +30,7 @@ namespace CursoDesignPatterns
 
         public override string ToString()
         {
-            return $"Razão social: {RazaoSocial}; Cnpj/Cpf: {Cnpj}; Valor total: {ValorBruto}; Obs.: {Observacao} ";
+            return $"Razão social: {RazaoSocial}; Data : {DataEmissao}; Cnpj/Cpf: {Cnpj}; Valor total: {ValorBruto}; Obs.: {Observacao} ";
         }
 
     }
