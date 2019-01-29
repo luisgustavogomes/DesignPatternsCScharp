@@ -24,11 +24,11 @@ namespace CursoDesignPatterns
 
         protected IList<Conta> Proximo(IList<Conta> contas)
         {
-            if (contas == null)
+            if (OutroFiltro != null)
             {
-                return new List<Conta>();
+                return OutroFiltro.Filtra(contas);
             }
-            return OutroFiltro.Filtra(contas);
+            return new List<Conta>();
         }
     }
 }

@@ -10,8 +10,25 @@ namespace CursoDesignPatterns
     {
         public static void Main(string[] args)
         {
-            Builder1();
-            Console.ReadLine();
+            Decorator2();
+        }
+
+        private static void Observer1()
+        {
+            var listaDeAcoes = new List<IAcaoAposGerarNota>() { new EnviadorDeEmail(), new NotaFiscalDao(), new EnviadorPorSMS(), new Multiplicador(10) };
+            var criadorDeNotaFiscal = new NotaFiscalBuilder(listaDeAcoes);
+            var itens = new ItemDaNotaBuilder();
+            criadorDeNotaFiscal
+                .ParaEmpresa("LG")
+                .ComCnpj("999.999.99-99")
+                .ComItem(itens.ComNome("Sapato").ComValor(100).Controi())
+                .ComItem(itens.ComNome("Calça").ComValor(500).Controi())
+                .NaData(new DateTime(2017, 1, 18))
+                .ComObservacoes("Teste obs ");
+
+            var nf = criadorDeNotaFiscal.Constroi();
+
+            Console.WriteLine(nf);
         }
 
         private static void Builder1()
@@ -79,6 +96,18 @@ namespace CursoDesignPatterns
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        private static void Decorator2()
+        {
+            IList<Conta> contas = new List<Conta>() { new Conta(200, "luis"), new Conta(50, "Gustavo"), new Conta(750, "Bauer") };
+            IList<Conta> contasFiltradas = new List<Conta>();
+
+            var filtro = new FiltraSaldoMenorQueCem(new FiltraSaldoMaiorQuinhentos());
+            contasFiltradas = filtro.Filtra(contas);
+            contasFiltradas.ToList().ForEach(c => Console.WriteLine(c));
+
+            Console.ReadLine();
         }
 
         private static void Decorator1()
