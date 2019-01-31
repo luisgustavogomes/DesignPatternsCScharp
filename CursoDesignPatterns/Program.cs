@@ -82,7 +82,9 @@ namespace CursoDesignPatterns
 
 
                 reforma.Aprova();
+
                 Console.WriteLine("\nStatus: " + reforma.Status + " | Saldo: " + reforma.Valor);
+
                 reforma.AplicaDescontoExtra();
                 Console.WriteLine("Status: " + reforma.Status + " | Saldo: " + reforma.Valor);
 

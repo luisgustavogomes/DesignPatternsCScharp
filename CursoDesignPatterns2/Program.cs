@@ -1,5 +1,6 @@
 ﻿using CursoDesignPatterns2.Cap1;
 using CursoDesignPatterns2.Cap2;
+using CursoDesignPatterns2.Cap3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,21 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
-            Flyweight1();
+            var contrato = new Contrato(DateTime.Now, "luis");
+            Console.WriteLine(contrato);
+            contrato.Avanca();
+            Console.WriteLine(contrato);
+            contrato.Avanca();
+            Console.WriteLine(contrato);
+            contrato.Avanca();
+            Console.WriteLine(contrato);
+
+            Console.WriteLine("\n================================");
+            foreach (var item in contrato.Historico.Contratos)
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
         private static void Flyweight1()

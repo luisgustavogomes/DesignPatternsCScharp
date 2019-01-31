@@ -54,11 +54,19 @@
     <Compile Include="Cap2\Re.cs" />
     <Compile Include="Cap2\Si.cs" />
     <Compile Include="Cap2\Sol.cs" />
+    <Compile Include="Cap3\Contrato.cs" />
+    <Compile Include="Cap3\ContratoHistorico.cs" />
+    <Compile Include="Cap3\ITipoContrato.cs" />
+    <Compile Include="Cap3\StatusContratoAcertado.cs" />
+    <Compile Include="Cap3\StatusContratoConcluido.cs" />
+    <Compile Include="Cap3\StatusContratoEmAndamento.cs" />
+    <Compile Include="Cap3\StatusContratoNovo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
