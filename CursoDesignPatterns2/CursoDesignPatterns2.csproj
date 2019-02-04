@@ -61,6 +61,14 @@
     <Compile Include="Cap3\StatusContratoConcluido.cs" />
     <Compile Include="Cap3\StatusContratoEmAndamento.cs" />
     <Compile Include="Cap3\StatusContratoNovo.cs" />
+    <Compile Include="Cap4\Divisao.cs" />
+    <Compile Include="Cap4\ExpressaoAbstract.cs" />
+    <Compile Include="Cap4\IExpressao.cs" />
+    <Compile Include="Cap4\Multiplicacao.cs" />
+    <Compile Include="Cap4\Numero.cs" />
+    <Compile Include="Cap4\Raiz.cs" />
+    <Compile Include="Cap4\Soma.cs" />
+    <Compile Include="Cap4\Subtracao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns2.Cap3
 {
-    class StatusContratoAcertado : ITipoContrato
+    public class StatusContratoAcertado : ITipoContrato
     {
         public void Avanca(Contrato contrato)
         {

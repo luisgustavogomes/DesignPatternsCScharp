@@ -1,9 +1,11 @@
 ﻿using CursoDesignPatterns2.Cap1;
 using CursoDesignPatterns2.Cap2;
 using CursoDesignPatterns2.Cap3;
+using CursoDesignPatterns2.Cap4;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,21 +15,60 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
-            var contrato = new Contrato(DateTime.Now, "luis");
-            Console.WriteLine(contrato);
-            contrato.Avanca();
-            Console.WriteLine(contrato);
-            contrato.Avanca();
-            Console.WriteLine(contrato);
-            contrato.Avanca();
-            Console.WriteLine(contrato);
 
-            Console.WriteLine("\n================================");
-            foreach (var item in contrato.Historico.Contratos)
+        }
+
+        private static void Interpreter3()
+        {
+            var esquerda = new Multiplicacao(new Numero(2), new Numero(10));
+            var direita = new Divisao(new Numero(20), new Numero(10));
+            var resultado = new Multiplicacao(esquerda, direita);
+
+            Console.WriteLine(resultado.Avalia());
+
+            var resultadoRaiz = new Raiz(resultado);
+            Console.WriteLine(resultadoRaiz.Avalia());
+        }
+
+        private static void Interpreter2()
+        {
+            var soma = Expression.Add(Expression.Constant(200), Expression.Constant(350));
+            Func<int> funcao = Expression.Lambda<Func<int>>(soma).Compile();
+            Console.WriteLine(funcao());
+        }
+
+        private static void Interpreter1()
+        {
+            var esquerda = new Soma(new Numero(1), new Numero(10));
+            var direita = new Subtracao(new Numero(20), new Numero(10));
+            var resultado = new Soma(esquerda, direita);
+
+            Console.WriteLine(resultado.Avalia());
+        }
+
+        private static void Memento1()
+        {
+            try
             {
-                Console.WriteLine(item);
-            }
+                var contrato = new Contrato(DateTime.Now, "luis");
+                Console.WriteLine(contrato);
+                contrato.Avanca();
+                Console.WriteLine(contrato);
+                contrato.Avanca();
+                Console.WriteLine(contrato);
+                contrato.Avanca();
+                Console.WriteLine(contrato);
 
+                Console.WriteLine("\n================================");
+                foreach (var item in contrato.Historico.Contratos)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         private static void Flyweight1()

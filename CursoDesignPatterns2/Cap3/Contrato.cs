@@ -12,13 +12,16 @@ namespace CursoDesignPatterns2.Cap3
         public string Cliente { get; private set; }
         public ITipoContrato Tipo { get; set; }
         public ContratoHistorico Historico { get; set; }
+        private bool controlador;
 
+        
         public Contrato(DateTime data, string cliente)
         {
             Data = data;
             Cliente = cliente ?? throw new ArgumentNullException(nameof(cliente));
             Tipo = new StatusContratoNovo();
             Historico = new ContratoHistorico();
+            controlador = true;
         }
 
         private Contrato(DateTime data, string cliente, ITipoContrato tipo) : this(data, cliente)
@@ -28,14 +31,15 @@ namespace CursoDesignPatterns2.Cap3
 
         public void Avanca()
         {
-            Historico.Adiciona(SalvaHistoricoContrato());
-            Tipo.Avanca(this);
+                Historico.Adiciona(SalvaHistoricoContrato());   
+                Tipo.Avanca(this);
         }
 
         private Contrato SalvaHistoricoContrato()
         {
             return new Contrato(this.Data, this.Cliente, this.Tipo);
         }
+
 
         public override string ToString()
         {
