@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CursoDesignPatterns2.Cap5
 {
-    public class ImpressoraVisitor
+    public class ImpressoraVisitor :IVisitorImpressora
     {
         public void ImprimeSoma(Soma soma)
         {

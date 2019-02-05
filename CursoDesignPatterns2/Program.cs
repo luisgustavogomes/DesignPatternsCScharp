@@ -16,14 +16,18 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
+            Visitor1();
+        }
 
-            var esquerda = new Soma(new Numero(1), new Numero(10));
+        private static void Visitor1()
+        {
+            var esquerda = new Soma(new Numero(5), new Numero(10));
             var direita = new Subtracao(new Numero(20), new Numero(10));
-            var resultado = new Soma(esquerda, direita);
+            var resultado = new Multiplicacao(esquerda, direita);
 
-            Console.WriteLine(resultado.Avalia());
             var impressora = new ImpressoraVisitor();
             resultado.Aceita(impressora);
+            Console.WriteLine("\n"+ resultado.Avalia());
         }
 
         private static void Interpreter3()

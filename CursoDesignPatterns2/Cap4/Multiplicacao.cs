@@ -17,7 +17,7 @@ namespace CursoDesignPatterns2.Cap4
 
         public override void Aceita(ImpressoraVisitor impressora)
         {
-            throw new NotImplementedException();
+            impressora.ImprimeMultiplicacao(this);
         }
 
         public override int Avalia()
