@@ -27,32 +27,28 @@ namespace CursoDesignPatterns2.Cap5
             Console.Write(")");
         }
 
-        public void ImrimeSubtracao<T>(T t)
-        {
-            throw new NotImplementedException();
-        }
-
         public void ImprimeMultiplicacao(Multiplicacao multiplicacao)
         {
             Console.Write("(");
-
+            multiplicacao.Esquerda.Aceita(this);
             Console.Write("*");
-
+            multiplicacao.Direita.Aceita(this);
             Console.Write(")");
         }
 
         public void ImprimeDivisao(Divisao divisao)
         {
             Console.Write("(");
-
+            divisao.Esquerda.Aceita(this);
             Console.Write("/");
-
+            divisao.Direita.Aceita(this);
             Console.Write(")");
         }
 
         public void ImprimeRaiz(Raiz raiz)
         {
             Console.Write("Raiz");
+            raiz.Esquerda.Aceita(this);
         }
 
         public void ImprimeNumero(Numero numero)
