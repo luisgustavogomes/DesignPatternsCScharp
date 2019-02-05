@@ -69,6 +69,7 @@
     <Compile Include="Cap4\Raiz.cs" />
     <Compile Include="Cap4\Soma.cs" />
     <Compile Include="Cap4\Subtracao.cs" />
+    <Compile Include="Cap5\ImpressoraVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

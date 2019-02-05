@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CursoDesignPatterns2.Cap5;
 
 namespace CursoDesignPatterns2.Cap4
 {
@@ -12,6 +13,11 @@ namespace CursoDesignPatterns2.Cap4
         {
             Esquerda = esquerda;
             Direita = direita;
+        }
+
+        public override void Aceita(ImpressoraVisitor impressora)
+        {
+            throw new NotImplementedException();
         }
 
         public override int Avalia()

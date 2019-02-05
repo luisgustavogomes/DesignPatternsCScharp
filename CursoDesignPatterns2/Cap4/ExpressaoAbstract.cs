@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoDesignPatterns2.Cap5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace CursoDesignPatterns2.Cap4
 {
     public abstract class ExpressaoAbstract : IExpressao
     {
-        protected IExpressao Esquerda;
-        protected IExpressao Direita;
+        public IExpressao Esquerda { get; protected set; }
+        public IExpressao Direita { get; protected set; }
         public abstract int Avalia();
+        public abstract void Aceita(ImpressoraVisitor impressora);
     }
 }
