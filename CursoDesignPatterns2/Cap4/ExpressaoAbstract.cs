@@ -12,6 +12,6 @@ namespace CursoDesignPatterns2.Cap4
         public IExpressao Esquerda { get; protected set; }
         public IExpressao Direita { get; protected set; }
         public abstract int Avalia();
-        public abstract void Aceita(ImpressoraVisitor impressora);
+        public abstract void Aceita(IVisitorImpressora impressora);
     }
 }

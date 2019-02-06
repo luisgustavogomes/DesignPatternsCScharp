@@ -3,6 +3,7 @@ using CursoDesignPatterns2.Cap2;
 using CursoDesignPatterns2.Cap3;
 using CursoDesignPatterns2.Cap4;
 using CursoDesignPatterns2.Cap5;
+using CursoDesignPatterns2.Cap6;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,15 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
-            Visitor1();
+            Bridge1();
+
+        }
+
+        private static void Bridge1()
+        {
+            var mensagem = new MensagemAdminstrativa("Luis");
+            mensagem.Enviador = new EnviaPorSMS();
+            mensagem.Envia();
         }
 
         private static void Visitor1()
@@ -27,6 +36,9 @@ namespace CursoDesignPatterns2
 
             var impressora = new ImpressoraVisitor();
             resultado.Aceita(impressora);
+            Console.WriteLine("");
+            var impressora2 = new ImpressoraVisitorSinalEsquerda();
+            resultado.Aceita(impressora2);
             Console.WriteLine("\n"+ resultado.Avalia());
         }
 

@@ -70,7 +70,14 @@
     <Compile Include="Cap4\Soma.cs" />
     <Compile Include="Cap4\Subtracao.cs" />
     <Compile Include="Cap5\ImpressoraVisitor.cs" />
+    <Compile Include="Cap5\ImpressoraVisitorSinalEsquerda.cs" />
     <Compile Include="Cap5\IVisitorImpressora.cs" />
+    <Compile Include="Cap6\EnviaPorEmail.cs" />
+    <Compile Include="Cap6\EnviaPorSMS.cs" />
+    <Compile Include="Cap6\IEnviador.cs" />
+    <Compile Include="Cap6\IMensagem.cs" />
+    <Compile Include="Cap6\MensagemCliente.cs" />
+    <Compile Include="Cap6\MensagemAdminstrativa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

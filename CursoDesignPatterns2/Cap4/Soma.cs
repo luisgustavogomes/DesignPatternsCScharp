@@ -15,7 +15,7 @@ namespace CursoDesignPatterns2.Cap4
             Direita = direita;
         }
 
-        public override void Aceita(ImpressoraVisitor impressora)
+        public override void Aceita(IVisitorImpressora impressora)
         {
             impressora.ImprimeSoma(this);
         }

@@ -21,7 +21,7 @@ namespace CursoDesignPatterns2.Cap4
             return this.Valor;
         }
 
-        public void Aceita(ImpressoraVisitor impressora)
+        public void Aceita(IVisitorImpressora impressora)
         {
             impressora.ImprimeNumero(this);
         }

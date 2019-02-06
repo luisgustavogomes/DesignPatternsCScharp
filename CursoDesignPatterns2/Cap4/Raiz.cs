@@ -14,7 +14,7 @@ namespace CursoDesignPatterns2.Cap4
             Esquerda = esquerda;
         }
 
-        public override void Aceita(ImpressoraVisitor impressora)
+        public override void Aceita(IVisitorImpressora impressora)
         {
             impressora.ImprimeRaiz(this);
         }
