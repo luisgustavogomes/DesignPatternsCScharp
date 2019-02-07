@@ -78,12 +78,20 @@
     <Compile Include="Cap6\IMensagem.cs" />
     <Compile Include="Cap6\MensagemCliente.cs" />
     <Compile Include="Cap6\MensagemAdminstrativa.cs" />
+    <Compile Include="Cap7\FilaDeTrabalho.cs" />
+    <Compile Include="Cap7\FinalizaPedido.cs" />
+    <Compile Include="Cap7\IComando.cs" />
+    <Compile Include="Cap7\PagaPedido.cs" />
+    <Compile Include="Cap7\Pedido.cs" />
+    <Compile Include="Cap7\Status.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Cap8\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

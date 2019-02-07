@@ -4,6 +4,7 @@ using CursoDesignPatterns2.Cap3;
 using CursoDesignPatterns2.Cap4;
 using CursoDesignPatterns2.Cap5;
 using CursoDesignPatterns2.Cap6;
+using CursoDesignPatterns2.Cap7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,30 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
-            Bridge1();
 
+
+        }
+
+        private static void Command1()
+        {
+            var fila = new FilaDeTrabalho();
+            var p1 = new Pedido("Luis", 100);
+            var p2 = new Pedido("Gustavo", 200);
+
+            fila.Adiciona(new PagaPedido(p1));
+            fila.Adiciona(new PagaPedido(p2));
+            fila.Adiciona(new FinalizaPedido(p2));
+
+
+            fila.Processa();
         }
 
         private static void Bridge1()
         {
-            var mensagem = new MensagemAdminstrativa("Luis");
-            mensagem.Enviador = new EnviaPorSMS();
+            var mensagem = new MensagemAdminstrativa("Luis")
+            {
+                Enviador = new EnviaPorSMS()
+            };
             mensagem.Envia();
         }
 
