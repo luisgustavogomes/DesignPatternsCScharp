@@ -84,14 +84,14 @@
     <Compile Include="Cap7\PagaPedido.cs" />
     <Compile Include="Cap7\Pedido.cs" />
     <Compile Include="Cap7\Status.cs" />
+    <Compile Include="Cap8\Cliente.cs" />
+    <Compile Include="Cap8\GeradorXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cap8\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

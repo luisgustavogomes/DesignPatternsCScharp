@@ -5,6 +5,7 @@ using CursoDesignPatterns2.Cap4;
 using CursoDesignPatterns2.Cap5;
 using CursoDesignPatterns2.Cap6;
 using CursoDesignPatterns2.Cap7;
+using CursoDesignPatterns2.Cap8;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,19 @@ namespace CursoDesignPatterns2
         static void Main(string[] args)
         {
 
+        }
 
+        private static void Adapter1()
+        {
+            var cliente = new Cliente
+            {
+                Nome = "victor",
+                Endereco = "Rua Vergueiro",
+                DataNascimento = DateTime.Now
+            };
+
+            string xml = new GeradorXml().GeraXML(cliente);
+            Console.WriteLine(xml);
         }
 
         private static void Command1()
