@@ -74,10 +74,12 @@
     <Compile Include="Cap5\IVisitorImpressora.cs" />
     <Compile Include="Cap6\EnviaPorEmail.cs" />
     <Compile Include="Cap6\EnviaPorSMS.cs" />
+    <Compile Include="Cap6\EnviaPorWhatsApp.cs" />
     <Compile Include="Cap6\IEnviador.cs" />
     <Compile Include="Cap6\IMensagem.cs" />
     <Compile Include="Cap6\MensagemCliente.cs" />
     <Compile Include="Cap6\MensagemAdminstrativa.cs" />
+    <Compile Include="Cap6\MensagemDiretor.cs" />
     <Compile Include="Cap7\FilaDeTrabalho.cs" />
     <Compile Include="Cap7\FinalizaPedido.cs" />
     <Compile Include="Cap7\IComando.cs" />
@@ -92,6 +94,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Cap9\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

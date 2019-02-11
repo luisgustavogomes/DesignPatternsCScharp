@@ -114,10 +114,10 @@ namespace CursoDesignPatterns
 
         private static void Decorator1()
         {
-            var iss = new ISS(new ICMS());
+            var imposto = new ISS(new ICMS());
             var orcamento = new Orcamento(500);
 
-            var valorImposto = iss.Calcula(orcamento);
+            var valorImposto = imposto.Calcula(orcamento);
 
             Console.WriteLine(valorImposto);
         }

@@ -19,7 +19,7 @@ namespace CursoDesignPatterns2
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("12");
         }
 
         private static void Adapter1()
@@ -51,9 +51,9 @@ namespace CursoDesignPatterns2
 
         private static void Bridge1()
         {
-            var mensagem = new MensagemAdminstrativa("Luis")
+            var mensagem = new MensagemDiretor("Luis")
             {
-                Enviador = new EnviaPorSMS()
+                Enviador = new EnviaPorWhatsApp()
             };
             mensagem.Envia();
         }
@@ -62,14 +62,16 @@ namespace CursoDesignPatterns2
         {
             var esquerda = new Soma(new Numero(5), new Numero(10));
             var direita = new Subtracao(new Numero(20), new Numero(10));
-            var resultado = new Multiplicacao(esquerda, direita);
+            var teste = new Multiplicacao(esquerda, direita);
+            var teste2 = new Divisao(new Numero(10), new Numero(2));
+            var resultado = new Multiplicacao(teste, teste2);
 
             var impressora = new ImpressoraVisitor();
             resultado.Aceita(impressora);
             Console.WriteLine("");
-            var impressora2 = new ImpressoraVisitorSinalEsquerda();
-            resultado.Aceita(impressora2);
-            Console.WriteLine("\n"+ resultado.Avalia());
+            //var impressora2 = new ImpressoraVisitorSinalEsquerda();
+            //resultado.Aceita(impressora2);
+            //Console.WriteLine("\n"+ resultado.Avalia());
         }
 
         private static void Interpreter3()
@@ -93,9 +95,12 @@ namespace CursoDesignPatterns2
 
         private static void Interpreter1()
         {
-            var esquerda = new Soma(new Numero(1), new Numero(10));
+            var esquerda = new Soma(new Numero(5), new Numero(10));
             var direita = new Subtracao(new Numero(20), new Numero(10));
-            var resultado = new Soma(esquerda, direita);
+            var teste = new Multiplicacao(esquerda, direita);
+            var teste2 = new Divisao(new Numero(10), new Numero(2));
+            var resultado = new Multiplicacao(teste, teste2);
+
 
             Console.WriteLine(resultado.Avalia());
         }
