@@ -10,7 +10,7 @@ namespace CursoDesignPatterns
     {
         public static void Main(string[] args)
         {
-            Decorator2();
+
         }
 
         private static void Observer1()
